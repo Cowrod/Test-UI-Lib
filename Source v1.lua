@@ -38,35 +38,27 @@
 			 	 -- Create Empty Invisible Frame In Tab
 ]]
 
-local RandomUI = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local Frame_2 = Instance.new("Frame")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local FrameTab = Instance.new("ScrollingFrame")
-local PageTab = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
-local Close = Instance.new("TextButton")
-local Sim = Instance.new("TextButton")
-local CloseOpen = Instance.new("TextButton")
-
-RandomUI.Name = "RandomUI"
-RandomUI.Parent = game.CoreGui
+local RandomUI = Instance.new("ScreenGui",game.CoreGui)
+local Frame = Instance.new("Frame",RandomUI)
+local TextLabel = Instance.new("TextLabel",Frame)
+local ScrollingFrame = Instance.new("ScrollingFrame",Frame)
+local Frame_2 = Instance.new("Frame",ScrollingFrame)
+local TextLabel_2 = Instance.new("TextLabel",Frame_2)
+local TextLabel_3 = Instance.new("TextLabel",Frame_2)
+local FrameTab = Instance.new("ScrollingFrame",Frame_2)
+local PageTab = Instance.new("ScrollingFrame",Frame_2)
+local UIListLayout = Instance.new("UIListLayout",PageTab)
+local Close = Instance.new("TextButton",Frame)
+local Sim = Instance.new("TextButton",Frame)
+local CloseOpen = Instance.new("TextButton",Frame)
 RandomUI.ResetOnSpawn = false
 
-_G.FetchCode=math.random(1,99999)
-
-Frame.Parent = RandomUI
-Frame.Name = "UILIB_".._G.FetchCode
 Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(-0.000119760633, 0, -6.55651093e-06, 0)
 Frame.Size = UDim2.new(0, 666, 0, 22)
 
-TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderSizePixel = 0
@@ -80,7 +72,6 @@ TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
-ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(74, 73, 73)
 ScrollingFrame.BorderSizePixel = 0
@@ -88,13 +79,11 @@ ScrollingFrame.Position = UDim2.new(0, 0, 1.00405681, 0)
 ScrollingFrame.Size = UDim2.new(0, 666, 0, 334)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
-Frame_2.Parent = ScrollingFrame
 Frame_2.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
 Frame_2.BorderSizePixel = 0
 Frame_2.Position = UDim2.new(-0.251, 0,0, 0)
 Frame_2.Size = UDim2.new(0, 167, 0, 334)
 
-TextLabel_2.Parent = Frame_2
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
 TextLabel_2.BorderSizePixel = 0
@@ -107,7 +96,6 @@ TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
 
-TextLabel_3.Parent = Frame_2
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_3.BackgroundTransparency = 0.800
 TextLabel_3.Position = UDim2.new(1, 0, 0.00299401209, 0)
@@ -121,7 +109,6 @@ TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
 FrameTab.Name = "FrameTab"
-FrameTab.Parent = Frame_2
 FrameTab.Active = true
 FrameTab.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 FrameTab.BackgroundTransparency = 0.750
@@ -131,7 +118,6 @@ FrameTab.Size = UDim2.new(0, 666, 0, 311)
 FrameTab.CanvasSize = UDim2.new(0, 0, 0, 10)
 
 PageTab.Name = "PageTab"
-PageTab.Parent = Frame_2
 PageTab.Active = true
 PageTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PageTab.BackgroundTransparency = 0.990
@@ -140,50 +126,35 @@ PageTab.BorderSizePixel = 0
 PageTab.Size = UDim2.new(0, 167, 0, 309)
 PageTab.CanvasSize = UDim2.new(0, 0, 0, 0)
 PageTab.ScrollBarThickness = 0
-
-UIListLayout.Parent = PageTab
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 5)
 
-Close.Name = "Close"
-Close.Parent = Frame
 Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Close.BackgroundTransparency = 0.350
 Close.BorderSizePixel = 0
 Close.Position = UDim2.new(0.970211565, 0, 0.121351764, 0)
 Close.Size = UDim2.new(0, 13, 0, 13)
-Close.Font = Enum.Font.SourceSans
 Close.Text = ""
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextScaled = true
-Close.TextSize = 14.000
 Close.TextWrapped = true
-
-Sim.Name = "Sim"
-Sim.Parent = Frame
 Sim.BackgroundColor3 = Color3.fromRGB(227, 132, 0)
 Sim.BackgroundTransparency = 0.350
 Sim.BorderSizePixel = 0
 Sim.Position = UDim2.new(0.942159295, 0, 0.121351764, 0)
 Sim.Size = UDim2.new(0, 13, 0, 14)
-Sim.Font = Enum.Font.SourceSans
 Sim.Text = ""
 Sim.TextColor3 = Color3.fromRGB(255, 255, 255)
 Sim.TextScaled = true
-Sim.TextSize = 14.000
 Sim.TextWrapped = true
 
-CloseOpen.Name = "CloseOpen"
-CloseOpen.Parent = Frame
 CloseOpen.BackgroundColor3 = Color3.fromRGB(167, 167, 167)
 CloseOpen.BackgroundTransparency = 0.500
 CloseOpen.BorderSizePixel = 0
 CloseOpen.Position = UDim2.new(0.913416386, 0, 0.121351764, 0)
 CloseOpen.Size = UDim2.new(0, 13, 0, 13)
-CloseOpen.Font = Enum.Font.SourceSans
 CloseOpen.Text = ""
 CloseOpen.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseOpen.TextSize = 14.000
 
 -- Scripts:
 
@@ -260,15 +231,9 @@ function tab()
 		req = false
 	end
 end
-Close.MouseButton1Click:Connect(function()
-	close()
-end)
-Sim.MouseButton1Click:Connect(function()
-	min()
-end)
-CloseOpen.MouseButton1Click:Connect(function()
-	tab()
-end)
+Close.MouseButton1Click:Connect(close)
+Sim.MouseButton1Click:Connect(min)
+CloseOpen.MouseButton1Click:Connect(tab)
 coroutine.wrap(function()
 	local mouse=game:GetService("Players").LocalPlayer:GetMouse();
 	local inputService=game:GetService('UserInputService');
@@ -300,17 +265,6 @@ coroutine.wrap(function()
 	end
 	draggerxnew(Frame)
 end)()
-coroutine.wrap(function()
-	local STRING = {"q","w","e","r","t","y","u","o","p","a","s","d","f","g","h","j","k","l","i","z","x","c","v","b","n","m","Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","0","1","2","3","4","5","6","7","8","9","/","*","-","+","!","%","&","(",")","=","?",",",".",">","£","#","½","[","{","}","]","_",";",":","\"","'"}
-	function A()
-		return STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]..STRING[math.random(1,#STRING)]
-	end
-	while true do
-		RandomUI.Name=A()..A()..A()..A()..A()..A()..A()..A()..A()..A()
-		wait(0.0000029)
-	end
-end)()
-
 local FunctionPath=Instance.new('LocalScript', PageTab)
 function CreateTabFrame(name)
 	local frame=Instance.new("ScrollingFrame",FunctionPath.Parent.Parent.FrameTab)
